@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 600px !important;
+    min-height: 600px !important;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+@layer utilities {
+    .app-container {
+        @apply flex h-[600px] antialiased bg-primary-bg
+    }
+    .app-flex-container {
+        @apply flex flex-row w-[600px]
+    }
+    .outer-chat-container {
+        @apply flex flex-col flex-auto p-6
+    }
+    .inner-chat-container {
+        @apply flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-primary-bg h-[400px]
+    }
+    .outer-chat-list-container {
+        @apply flex flex-col overflow-x-hidden my-4 p-2
+    }
+    .chat-list-container {
+        @apply flex flex-col
+    }
+    .chat-list-grid {
+        @apply grid grid-cols-12 gap-y-2
+    }
+    .user-message-container {
+        @apply flex items-end justify-start flex-row-reverse
+    }
+    .ai-message-container {
+        @apply flex flex-row items-end
+    }
+    .user-avatar {
+        @apply flex items-center justify-center h-10 w-10 rounded-full bg-indigo-500 flex-shrink-0
+    }
+    .ai-avatar {
+        @apply flex items-center justify-center h-10 w-10 rounded-full bg-accent flex-shrink-0
+    }
+    .message {
+        @apply relative mr-3 text-xs max-w-[400px] bg-secondary-bg py-2 px-4 shadow rounded-xl
+    }
+    .user-message {
+        @apply relative mr-3 text-sm bg-secondary-bg py-2 px-4 shadow rounded-xl
+    }
+    .ai-message {
+        @apply relative ml-3 text-sm bg-secondary-bg py-2 px-4 shadow rounded-xl
+    }
+    .user {
+        @apply col-start-3 col-end-13 p-3 rounded-lg
+    }
+    .ai {
+        @apply col-start-1 col-end-11 p-3 rounded-lg
+    }
+    .user-prompt-container {
+        @apply flex flex-row items-center h-[4rem] rounded-xl bg-accent-bg w-full px-4 mt-4
+    }
+    .user-input-container {
+        @apply relative w-full
+    }
+    .user-input {
+        @apply flex w-full border rounded-xl border-primary-text focus:outline-none text-primary-text bg-accent-bg focus:border-accent pl-4 h-10 px-4
+    }
+    .user-send-btn-container {
+        @apply ml-4
+    }
+    .user-send-btn {
+        @apply flex items-center justify-center bg-accent hover:bg-opacity-70 active:bg-opacity-50 transition-all duration-200 ease-in-out rounded-xl text-white px-4 py-1 flex-shrink-0
+    }
+    .user-avatar-container {
+        @apply h-20 w-20 rounded-full border overflow-hidden
+    }
+    .reset-btn {
+        @apply flex items-center justify-center text-primary-text ml-2 cursor-pointer transition-all duration-200 ease-in-out hover:scale-105 active:scale-110 hover:-rotate-12
+    }
+}
+
+.inset-shadow {
+    box-shadow: 0px 0px 56px 1px #000 inset;
+}
+
+.bouncing-loader {
+    display: flex;
+    justify-content: center;
+  }
+  
+.bouncing-loader > div {
+    width: 6px;
+    height: 6px;
+    margin: 1px 3px;
+    border-radius: 50%;
+    background-color: #a3a1a1;
+    opacity: 1;
+    animation: bouncing-loader 0.6s infinite alternate;
+}
+
+@keyframes bouncing-loader {
+to {
+    opacity: 0.1;
+    transform: translateY(-5px);
+}
+}
+
+.bouncing-loader > div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.bouncing-loader > div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+code {
+    white-space : pre-wrap !important;
+  }
