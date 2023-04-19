@@ -20,6 +20,11 @@ function App() {
       isLoading: false
     } satisfies MessageType
 
+    const messagesHistory = [
+      ...messages,
+      userMessage
+    ]
+
     setMessages(prev => {
       const newMessages = [
         ...prev,
@@ -47,7 +52,7 @@ function App() {
       }
     ]))
 
-    const response = await sendMessage(inputMessage)
+    const response = await sendMessage(messagesHistory)
 
     if (response.message && !response.error) {
       setMessages(prev => {

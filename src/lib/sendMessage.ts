@@ -1,3 +1,5 @@
+import { MessageType } from "../components"
+import { HistoryType, getHistory } from "./history"
 import { getAIResponse } from "./openAIConfiguration"
 
 export interface ResponseType {
@@ -6,16 +8,18 @@ export interface ResponseType {
 }
 
 
-export const sendMessage = async (message: string): Promise<ResponseType> => {
+export const sendMessage = async (messages: Array<MessageType>): Promise<ResponseType> => {
 
-    if (!message) return {
+    if (!messages) return {
         message: null,
         error: "Message empty"
     }
 
-    const aiResponse = await getAIResponse(message)
+    const history = getHistory(messages)
 
-    if(!aiResponse) return {
+    const aiResponse = await getAIResponse(history)
+
+    if (!aiResponse) return {
         message: null,
         error: "AI Response error!"
     }

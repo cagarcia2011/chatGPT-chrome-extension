@@ -1,4 +1,5 @@
-import { Configuration, OpenAIApi } from "openai";
+import { ChatCompletionRequestMessage, ChatCompletionRequestMessageRoleEnum, Configuration, OpenAIApi } from "openai";
+import { HistoryType } from "./history";
 
 const configuration = 
     import.meta.env.VITE_OPENAI_SECRET && import.meta.env.VITE_OPENAI_ORG
@@ -17,11 +18,11 @@ const openAI =
         ? new OpenAIApi(configuration)
         : null
 
-export const getAIResponse = async (message: string) => {
+export const getAIResponse = async (history: HistoryType) => {
     try {
         const response = await openAI?.createChatCompletion({
             model: "gpt-3.5-turbo",
-            messages: [{role: "user", content: `${message}`}]
+            messages: history
         })
 
         if (!response?.data?.choices) return ""
