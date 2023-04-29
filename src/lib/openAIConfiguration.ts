@@ -1,4 +1,4 @@
-import { ChatCompletionRequestMessage, ChatCompletionRequestMessageRoleEnum, Configuration, OpenAIApi } from "openai";
+import { Configuration, OpenAIApi } from "openai";
 import { HistoryType } from "./history";
 
 const configuration = 
