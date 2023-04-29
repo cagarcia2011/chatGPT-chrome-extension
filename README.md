@@ -36,8 +36,9 @@ A chrome extension chat bot using OpenAI API.
 
     VITE_MODE=<production or development>
    ```
-   _Make sure to replace placeholders "<XX>" with the actual values_
-   _At "development" mode you can test storage functionality using localstorage. At "production" mode it will use chrome.storage._
+   * _Make sure to replace placeholders "<...>" with the actual values_
+   * _At "development" mode you can test storage functionality using localstorage._
+   * _At "production" mode it will use chrome.storage._
 7. Build for production
    ```sh
     npm run build
@@ -46,6 +47,10 @@ A chrome extension chat bot using OpenAI API.
    ```
     npm run dev
    ```
+9. Load to chrome locally at [chrome://extensions/](chrome://extensions/)
+    * Enable "_Developer Mode_"
+    * Click on "_Load unpacked_"
+    * Select the "_dist_" directory of the build
 
 <!-- MARKDOW LINKS & IMAGES -->
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
