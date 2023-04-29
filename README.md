@@ -51,6 +51,7 @@ A chrome extension chat bot using OpenAI API.
     * Enable "_Developer Mode_"
     * Click on "_Load unpacked_"
     * Select the "_dist_" directory of the build
+    * Visit [Chrome Developers Documentation](https://developer.chrome.com/docs/extensions/) for more information on creating chrome extensions.
 
 <!-- MARKDOW LINKS & IMAGES -->
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
